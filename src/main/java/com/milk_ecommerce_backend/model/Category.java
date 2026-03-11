@@ -1,5 +1,6 @@
 package com.milk_ecommerce_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
@@ -33,6 +34,7 @@ public class Category {
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "category")
+    @JsonIgnore
     private List<Product> products;
     
     
